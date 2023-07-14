@@ -1,0 +1,13 @@
+Input Sequence:
+1-1-0-1-0-0-1-1-1-reset
+
+Expected Output:
+S1-S3-S6-S5-S2-S4-S1-S3-S7-S0
+
+
+Switch Allocation:
+Switch 0: bit_in (input)
+Switch 1: clock
+Switch 2: reset 
+
+Output LEDs: LED[2],LED[1],LED[0]
