@@ -1,0 +1,47 @@
+module FIGOFSM_tb;
+  reg clk;
+  reg reset;
+  reg bit_in;
+  wire [2:0] state_out;
+
+  FIGOFSM fsm (
+    .clk(clk),
+    .reset(reset),
+    .bit_in(bit_in),
+    .state_out(state_out)
+  );
+
+
+  always begin
+    clk = 1;
+    #5;
+    clk = 0;
+    #5;
+  end
+
+  initial begin
+    reset = 1;
+    bit_in = 0;
+    #5;
+    reset = 0;
+	 #1
+
+    bit_in = 1;
+    #10;
+    bit_in = 0;
+    #10;
+    bit_in = 0;
+    #10;
+    bit_in = 1;
+    #10;
+    bit_in = 1;
+    #10;
+	 bit_in = 0;
+    #10;
+	 bit_in = 1;
+    #10;
+	 bit_in = 0;
+    #10;
+    $finish;
+  end
+endmodule
